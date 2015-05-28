@@ -1,0 +1,119 @@
+#include<stdio.h>
+
+#include<math.h>
+
+int rozwiazania(float *w1,float *w2,float *w3,float *x1,float *x2);
+
+int main (void)
+
+{
+
+float a,b,c,m1,m2;
+
+int il_rozw;
+
+m1=0;
+
+m2=0;
+
+printf("podaj wartosc wspolczynnika przy najwyzszej potedze\n");
+
+scanf("%f",&a);
+
+printf("podaj wartosc wspolczynnika przy \"x\"\n");
+
+scanf("%f",&b);
+
+printf("podaj wartosc wyrazu wolnego\n");
+
+scanf("%f",&c);
+
+
+
+
+il_rozw=rozwiazania(&a,&b,&c,&m1,&m2);
+
+
+
+
+if(il_rozw==0)
+
+{printf("ilosc rozwiazan tego rownania to %d",il_rozw);
+
+}
+
+else if(il_rozw==1)
+
+{printf("funkcja ma %d rozwiazanie\nRozwiazanie ma postac %.3f",il_rozw,m1);
+
+}
+
+else if(il_rozw==2)
+
+{printf("funkcja ma %d rozwiazan\nRozwiazania maja postac x1=% .3f oraz x2=% .3f",il_rozw,m1,m2);
+
+}
+
+}
+
+int rozwiazania(float *w1,float *w2,float *w3,float *x1,float *x2)
+
+{
+
+float delta,pierw_z_delty,m1,m2,a,b,c;
+
+a=*w1;
+
+b=*w2;
+
+c=*w3;
+
+delta=(b*b)-(4*a*c);
+
+
+
+
+
+
+
+if(delta<0)
+
+{return 0;
+
+}
+
+else if(delta==0)
+
+{
+
+m1=(-b)/(2*a);
+
+
+*x1=m1;
+
+
+return 1;
+
+}
+
+else if(delta>0)
+
+{
+
+pierw_z_delty=sqrt(delta);
+
+m1=(-b-pierw_z_delty)/(2*a);
+
+m2=(-b+pierw_z_delty)/(2*a);
+
+
+*x1=m1;
+
+*x2=m2;
+
+
+return 2;
+
+}
+
+}

@@ -1,6 +1,6 @@
 #include <stdio.h> //tu miala byc zmiana pierwszej linijki
 
-#include <stdlib.h>
+#include <stdlib.h> ///kadabfj qavqwgw
 
 #define ROZMIAR 10
 

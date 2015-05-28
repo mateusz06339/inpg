@@ -1,0 +1,95 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#define ROZMIAR 10
+
+void dodaj(int** ptab, int n, int new_elem);
+
+
+
+
+void main()
+
+{
+
+int* wskaznik=NULL;
+
+int i,new;
+
+for(i=0; i<ROZMIAR; i++)
+
+{
+
+printf("podaj nowy element tablicy\n");
+
+scanf("%d",&new);
+
+dodaj(&wskaznik,i,new);
+
+if(wskaznik==NULL)
+
+{
+
+printf("Nie przypisano pamieci");
+
+break;
+
+}
+
+}
+
+for(i=0; i<ROZMIAR; i++)
+
+printf("%5d", wskaznik[i]);
+
+printf("\n");
+
+}
+
+
+
+
+
+
+
+void dodaj(int** ptab, int n, int new_elem)
+
+{
+
+int i;
+
+int* nowa_tab=malloc((n+1)*sizeof(int));
+
+	
+
+if (nowa_tab==NULL)
+
+{
+
+free(*ptab);
+
+*ptab=NULL;
+
+return;
+
+} 
+
+else
+
+{
+
+for(i=0; i<n; i++)
+
+nowa_tab[i]=(*ptab)[i];
+
+nowa_tab[n]=new_elem;
+
+free(*ptab);
+
+*ptab=nowa_tab;
+
+}
+
+
+}

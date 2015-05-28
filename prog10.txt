@@ -4,7 +4,7 @@
 
 #define ROZMIAR 10
 
-void dodaj(int** ptab, int n, int new_elem);
+void dodaj(int** ptab, int n, int new_elem); // tutaj wprowaze zmiane
 
 
 
